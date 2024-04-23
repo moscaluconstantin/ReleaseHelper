@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ReleaseHelper.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProjectLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\\Users\\constantin.moscalu\\DataGripProjects\\Amdaris Data Lake</Value>
+    </Setting>
+    <Setting Name="ReleasesFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Database Release\\01 Sprint Releases</Value>
+    </Setting>
+    <Setting Name="RepositoryReleasesFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">$(System.DefaultWorkingDirectory)/_Amdaris Data Lake/Database Release/01 Sprint Releases</Value>
+    </Setting>
+    <Setting Name="LastUserStoryId" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
