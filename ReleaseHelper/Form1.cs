@@ -5,6 +5,7 @@ namespace ReleaseHelper
     public partial class Form1 : Form
     {
         private readonly Dictionary<string, string> _folderSufix;
+        private readonly Dictionary<string, string> _branchSufix;
 
         private string UsertStoryId => _userStoryTextBox.Text;
         private string Sprint => _sprintTextBox.Text;
@@ -30,6 +31,12 @@ namespace ReleaseHelper
                 ["Bug"] = "_fix"
             };
 
+            _branchSufix = new Dictionary<string, string>
+            {
+                ["Feature"] = "feature_",
+                ["Bug"] = "fix_"
+            };
+
             _userStoryType.Items.Clear();
             _userStoryType.Items.AddRange(_folderSufix.Keys.ToArray());
             _userStoryType.SelectedIndex = 0;
@@ -51,6 +58,9 @@ namespace ReleaseHelper
         private string GetFolderSuffix() =>
             _folderSufix[_userStoryType.SelectedItem.ToString()];
 
+        private string GetBranchName() =>
+            _branchSufix[_userStoryType.SelectedItem.ToString()] + UsertStoryId;
+
         private void CreateFileButton_Click(object sender, EventArgs e)
         {
             var releaseFolderPath = Path.Combine(ProjectFolder, ReleasesPath, ReleaseFolder);
@@ -71,6 +81,12 @@ namespace ReleaseHelper
 
             Properties.Settings.Default.LastUserStoryId = UsertStoryId;
             Properties.Settings.Default.Save();
+        }
+
+        private void CopyBranchNameButton_Click(object sender, EventArgs e)
+        {
+            var branchName = GetBranchName();
+            ClipboardService.SetText(branchName);
         }
 
         private void CopyFileNameButton_Click(object sender, EventArgs e)

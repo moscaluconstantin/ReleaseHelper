@@ -28,157 +28,195 @@
         /// </summary>
         private void InitializeComponent()
         {
-            _userStoryTextBox = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            _userStoryType = new ComboBox();
-            _createFileButton = new Button();
-            label3 = new Label();
-            _sprintTextBox = new TextBox();
-            label4 = new Label();
-            _sprintEndDateTextBox = new TextBox();
-            groupBox1 = new GroupBox();
-            _copyFileNameButton = new Button();
-            _copyReleasePathButton = new Button();
-            groupBox1.SuspendLayout();
-            SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this._userStoryTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this._userStoryType = new System.Windows.Forms.ComboBox();
+            this._createFileButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this._sprintTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this._sprintEndDateTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this._copyFileNameButton = new System.Windows.Forms.Button();
+            this._copyReleasePathButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this._copyBranchNameButton = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // _userStoryTextBox
             // 
-            _userStoryTextBox.Location = new Point(91, 12);
-            _userStoryTextBox.Name = "_userStoryTextBox";
-            _userStoryTextBox.PlaceholderText = "123465";
-            _userStoryTextBox.Size = new Size(100, 23);
-            _userStoryTextBox.TabIndex = 0;
+            this._userStoryTextBox.Location = new System.Drawing.Point(91, 12);
+            this._userStoryTextBox.Name = "_userStoryTextBox";
+            this._userStoryTextBox.PlaceholderText = "123465";
+            this._userStoryTextBox.Size = new System.Drawing.Size(100, 23);
+            this._userStoryTextBox.TabIndex = 0;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 15);
-            label1.TabIndex = 1;
-            label1.Text = "User Story Id";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "User Story Id";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 44);
-            label2.Name = "label2";
-            label2.Size = new Size(87, 15);
-            label2.TabIndex = 2;
-            label2.Text = "User Story Type";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "User Story Type";
             // 
             // _userStoryType
             // 
-            _userStoryType.FormattingEnabled = true;
-            _userStoryType.Items.AddRange(new object[] { "Feature", "Bug" });
-            _userStoryType.Location = new Point(105, 41);
-            _userStoryType.Name = "_userStoryType";
-            _userStoryType.Size = new Size(86, 23);
-            _userStoryType.TabIndex = 3;
+            this._userStoryType.FormattingEnabled = true;
+            this._userStoryType.Items.AddRange(new object[] {
+            "Feature",
+            "Bug"});
+            this._userStoryType.Location = new System.Drawing.Point(105, 41);
+            this._userStoryType.Name = "_userStoryType";
+            this._userStoryType.Size = new System.Drawing.Size(86, 23);
+            this._userStoryType.TabIndex = 3;
             // 
             // _createFileButton
             // 
-            _createFileButton.Location = new Point(10, 161);
-            _createFileButton.Name = "_createFileButton";
-            _createFileButton.Size = new Size(181, 23);
-            _createFileButton.TabIndex = 4;
-            _createFileButton.Text = "Create File";
-            _createFileButton.UseVisualStyleBackColor = true;
-            _createFileButton.Click += CreateFileButton_Click;
+            this._createFileButton.Location = new System.Drawing.Point(10, 161);
+            this._createFileButton.Name = "_createFileButton";
+            this._createFileButton.Size = new System.Drawing.Size(181, 23);
+            this._createFileButton.TabIndex = 4;
+            this._createFileButton.Text = "Create File";
+            this._createFileButton.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(11, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(39, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Name";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Name";
             // 
             // _sprintTextBox
             // 
-            _sprintTextBox.Location = new Point(71, 21);
-            _sprintTextBox.Name = "_sprintTextBox";
-            _sprintTextBox.PlaceholderText = "21";
-            _sprintTextBox.ReadOnly = true;
-            _sprintTextBox.Size = new Size(102, 23);
-            _sprintTextBox.TabIndex = 5;
+            this._sprintTextBox.Location = new System.Drawing.Point(71, 21);
+            this._sprintTextBox.Name = "_sprintTextBox";
+            this._sprintTextBox.PlaceholderText = "21";
+            this._sprintTextBox.ReadOnly = true;
+            this._sprintTextBox.Size = new System.Drawing.Size(102, 23);
+            this._sprintTextBox.TabIndex = 5;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(11, 53);
-            label4.Name = "label4";
-            label4.Size = new Size(54, 15);
-            label4.TabIndex = 8;
-            label4.Text = "End Date";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "End Date";
             // 
             // _sprintEndDateTextBox
             // 
-            _sprintEndDateTextBox.Location = new Point(71, 50);
-            _sprintEndDateTextBox.Name = "_sprintEndDateTextBox";
-            _sprintEndDateTextBox.PlaceholderText = "04.06.2023";
-            _sprintEndDateTextBox.ReadOnly = true;
-            _sprintEndDateTextBox.Size = new Size(102, 23);
-            _sprintEndDateTextBox.TabIndex = 7;
+            this._sprintEndDateTextBox.Location = new System.Drawing.Point(71, 50);
+            this._sprintEndDateTextBox.Name = "_sprintEndDateTextBox";
+            this._sprintEndDateTextBox.PlaceholderText = "04.06.2023";
+            this._sprintEndDateTextBox.ReadOnly = true;
+            this._sprintEndDateTextBox.Size = new System.Drawing.Size(102, 23);
+            this._sprintEndDateTextBox.TabIndex = 7;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(_sprintEndDateTextBox);
-            groupBox1.Controls.Add(_sprintTextBox);
-            groupBox1.Location = new Point(12, 70);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(179, 85);
-            groupBox1.TabIndex = 9;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Sprint";
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this._sprintEndDateTextBox);
+            this.groupBox1.Controls.Add(this._sprintTextBox);
+            this.groupBox1.Location = new System.Drawing.Point(12, 70);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(179, 85);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sprint";
             // 
             // _copyFileNameButton
             // 
-            _copyFileNameButton.Location = new Point(10, 190);
-            _copyFileNameButton.Name = "_copyFileNameButton";
-            _copyFileNameButton.Size = new Size(181, 23);
-            _copyFileNameButton.TabIndex = 10;
-            _copyFileNameButton.Text = "Copy file name";
-            _copyFileNameButton.UseVisualStyleBackColor = true;
-            _copyFileNameButton.Click += CopyFileNameButton_Click;
+            this._copyFileNameButton.Location = new System.Drawing.Point(10, 219);
+            this._copyFileNameButton.Name = "_copyFileNameButton";
+            this._copyFileNameButton.Size = new System.Drawing.Size(181, 23);
+            this._copyFileNameButton.TabIndex = 10;
+            this._copyFileNameButton.Text = "Copy file name";
+            this._copyFileNameButton.UseVisualStyleBackColor = true;
             // 
             // _copyReleasePathButton
             // 
-            _copyReleasePathButton.Location = new Point(10, 219);
-            _copyReleasePathButton.Name = "_copyReleasePathButton";
-            _copyReleasePathButton.Size = new Size(181, 23);
-            _copyReleasePathButton.TabIndex = 11;
-            _copyReleasePathButton.Text = "Copy release path";
-            _copyReleasePathButton.UseVisualStyleBackColor = true;
-            _copyReleasePathButton.Click += CopyReleasePathButton_Click;
+            this._copyReleasePathButton.Location = new System.Drawing.Point(10, 248);
+            this._copyReleasePathButton.Name = "_copyReleasePathButton";
+            this._copyReleasePathButton.Size = new System.Drawing.Size(181, 23);
+            this._copyReleasePathButton.TabIndex = 11;
+            this._copyReleasePathButton.Text = "Copy release path";
+            this._copyReleasePathButton.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 282);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(157, 15);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "© 2024 Moscalu Constantin.";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(51, 297);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 15);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "All rights reserved.";
+            // 
+            // _copyBranchNameButton
+            // 
+            this._copyBranchNameButton.Location = new System.Drawing.Point(10, 190);
+            this._copyBranchNameButton.Name = "_copyBranchNameButton";
+            this._copyBranchNameButton.Size = new System.Drawing.Size(181, 23);
+            this._copyBranchNameButton.TabIndex = 14;
+            this._copyBranchNameButton.Text = "Copy Branch Name";
+            this._copyBranchNameButton.UseVisualStyleBackColor = true;
+            this._copyBranchNameButton.Click += new System.EventHandler(this.CopyBranchNameButton_Click);
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(204, 256);
-            Controls.Add(_copyReleasePathButton);
-            Controls.Add(_copyFileNameButton);
-            Controls.Add(groupBox1);
-            Controls.Add(_createFileButton);
-            Controls.Add(_userStoryType);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(_userStoryTextBox);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
-            Name = "Form1";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Release Helper";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(204, 321);
+            this.Controls.Add(this._copyBranchNameButton);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this._copyReleasePathButton);
+            this.Controls.Add(this._copyFileNameButton);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this._createFileButton);
+            this.Controls.Add(this._userStoryType);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this._userStoryTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Release Helper";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -195,5 +233,8 @@
         private GroupBox groupBox1;
         private Button _copyFileNameButton;
         private Button _copyReleasePathButton;
+        private Label label5;
+        private Label label6;
+        private Button _copyBranchNameButton;
     }
 }
