@@ -3,13 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ProjectLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\\Users\\constantin.moscalu\\DataGripProjects\\Amdaris Data Lake</Value>
-    </Setting>
-    <Setting Name="ReleasesFolderPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Database Release\\01 Sprint Releases</Value>
+      <Value Profile="(Default)">Enter your project path</Value>
     </Setting>
     <Setting Name="RepositoryReleasesFolderPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">$(System.DefaultWorkingDirectory)/_Amdaris Data Lake/Database Release/01 Sprint Releases</Value>
+      <Value Profile="(Default)">Enter your repo relative path</Value>
     </Setting>
     <Setting Name="LastUserStoryId" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

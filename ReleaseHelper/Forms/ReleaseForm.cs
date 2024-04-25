@@ -1,8 +1,9 @@
+using ReleaseHelper.Forms;
 using TextCopy;
 
 namespace ReleaseHelper
 {
-    public partial class Form1 : Form
+    public partial class ReleaseForm : Form
     {
         private readonly Dictionary<string, string> _folderSufix;
         private readonly Dictionary<string, string> _branchSufix;
@@ -14,10 +15,9 @@ namespace ReleaseHelper
         private string ReleaseFolder => string.Format(Constants.ReleaseFolderTemplate, Sprint, SprintEndDate, GetFolderSuffix());
 
         public static string ProjectFolder => Properties.Settings.Default.ProjectLocation;
-        public static string ReleasesPath => Properties.Settings.Default.ReleasesFolderPath;
         public static object RepoReleasesPath => Properties.Settings.Default.RepositoryReleasesFolderPath;
 
-        public Form1()
+        public ReleaseForm()
         {
             InitializeComponent();
 
@@ -42,14 +42,14 @@ namespace ReleaseHelper
             _userStoryType.SelectedIndex = 0;
         }
 
-        private int GetCurrentSprint()
+        private static int GetCurrentSprint()
         {
             var daysPassed = (DateTime.Now - Constants.FirstSprintStartDate).TotalDays;
             var sprintsPassed = (int)Math.Floor(daysPassed / 14);
             return Constants.FirstSprint + sprintsPassed;
         }
 
-        private DateTime GetCurrentSprintEndDate()
+        private static DateTime GetCurrentSprintEndDate()
         {
             int sprintsPassed = GetCurrentSprint() - Constants.FirstSprint;
             return Constants.FirstSprintEndDate.AddDays(sprintsPassed * 14);
@@ -61,9 +61,21 @@ namespace ReleaseHelper
         private string GetBranchName() =>
             _branchSufix[_userStoryType.SelectedItem.ToString()] + UsertStoryId;
 
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            using var settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
+        }
+
         private void CreateFileButton_Click(object sender, EventArgs e)
         {
-            var releaseFolderPath = Path.Combine(ProjectFolder, ReleasesPath, ReleaseFolder);
+            var releaseFolderPath = Path.Combine(ProjectFolder, ReleaseFolder);
+
+            if (!Directory.Exists(ProjectFolder))
+            {
+                MessageBox.Show($"Invalid project path: {ProjectFolder}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (!Directory.Exists(releaseFolderPath))
                 Directory.CreateDirectory(releaseFolderPath);

@@ -12,7 +12,7 @@ namespace ReleaseHelper.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace ReleaseHelper.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\Users\\\\constantin.moscalu\\\\DataGripProjects\\\\Amdaris Data Lake")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Enter your project path")]
         public string ProjectLocation {
             get {
                 return ((string)(this["ProjectLocation"]));
@@ -37,20 +37,7 @@ namespace ReleaseHelper.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Database Release\\\\01 Sprint Releases")]
-        public string ReleasesFolderPath {
-            get {
-                return ((string)(this["ReleasesFolderPath"]));
-            }
-            set {
-                this["ReleasesFolderPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("$(System.DefaultWorkingDirectory)/_Amdaris Data Lake/Database Release/01 Sprint R" +
-            "eleases")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Enter your repo relative path")]
         public string RepositoryReleasesFolderPath {
             get {
                 return ((string)(this["RepositoryReleasesFolderPath"]));
