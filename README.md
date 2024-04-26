@@ -5,7 +5,7 @@ Release Helper is a small tool that was created to speedup creation of the chang
 ## Main window description
 ![Main window screenshot](https://github.com/moscaluconstantin/ReleaseHelper/blob/main/Images/Main%20window.jpg)
 
-The main window consists of 5 main sections:
+The main window consists of 5 sections:
 - Settings - Opens the settings window
 - User Story
   - Id - Here you can type the changes file name, initially it was intended to store only the id
