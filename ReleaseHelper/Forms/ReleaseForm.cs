@@ -11,11 +11,11 @@ namespace ReleaseHelper
         private string UsertStoryId => _userStoryTextBox.Text;
         private string Sprint => _sprintTextBox.Text;
         private string SprintEndDate => _sprintEndDateTextBox.Text;
-        private string FileName => string.Format(Constants.FileNameTemplate, DateTime.Now.ToString("dd.MM.yyyy"), UsertStoryId);
+        private string FileName => string.Format(Constants.FileNameTemplate, DateTime.Now.ToString(Constants.DateFormat), UsertStoryId);
         private string ReleaseFolder => string.Format(Constants.ReleaseFolderTemplate, Sprint, SprintEndDate, GetFolderSuffix());
 
         public static string ProjectFolder => Properties.Settings.Default.ProjectLocation;
-        public static object RepoReleasesPath => Properties.Settings.Default.RepositoryReleasesFolderPath;
+        public static string RepoReleasesPath => Properties.Settings.Default.RepositoryReleasesFolderPath;
 
         public ReleaseForm()
         {
@@ -23,7 +23,7 @@ namespace ReleaseHelper
 
             _userStoryTextBox.Text = !string.IsNullOrEmpty(Properties.Settings.Default.LastUserStoryId) ? Properties.Settings.Default.LastUserStoryId : "";
             _sprintTextBox.Text = GetCurrentSprint().ToString();
-            _sprintEndDateTextBox.Text = GetCurrentSprintEndDate().ToString("dd.MM.yyyy");
+            _sprintEndDateTextBox.Text = GetCurrentSprintEndDate().ToString(Constants.DateFormat);
 
             _folderSufix = new Dictionary<string, string>
             {
@@ -103,14 +103,29 @@ namespace ReleaseHelper
 
         private void CopyFileNameButton_Click(object sender, EventArgs e)
         {
-            var fileName = Path.GetFileNameWithoutExtension(FileName);
+            var fileName = Path.GetFileNameWithoutExtension(GetMostRecentPath());
             ClipboardService.SetText(fileName);
         }
 
         private void CopyReleasePathButton_Click(object sender, EventArgs e)
         {
-            string path = $"{RepoReleasesPath}/{ReleaseFolder}/{FileName}";
+            string path = Path.Combine(RepoReleasesPath, GetMostRecentPath());
             ClipboardService.SetText(path);
+        }
+
+        private string GetMostRecentPath()
+        {
+            var sprintsInfo = Directory.GetFiles(ProjectFolder, $"*{UsertStoryId}.sql", SearchOption.AllDirectories)
+                .Select(x => new FileSprintInfo(x))
+                .OrderByDescending(x => x.Sprint)
+                .ThenByDescending(x => x.Date)
+                .FirstOrDefault();
+
+            if (sprintsInfo == null)
+                return "";
+
+            var segments = sprintsInfo.FilePath.Split('\\');
+            return Path.Combine(segments[^2], segments[^1]);
         }
     }
 }
